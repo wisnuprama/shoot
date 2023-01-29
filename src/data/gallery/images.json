@@ -1,0 +1,37 @@
+{
+  "albumName": "...",
+  "albumSlug": "...",
+  "ctime": 123123,
+  "photos": [
+    {
+      "src": "/static/9045a1aeec593062e27307f49b45524e/A7401918.jpg",
+      "title": "A74123123",
+      "width": 3,
+      "height": 2
+    },
+    {
+      "src": "/static/9045a1aeec593062e27307f49b45524e/A7401918.jpg",
+      "title": "A74123123",
+      "width": 3,
+      "height": 2
+    },
+    {
+      "src": "/static/9045a1aeec593062e27307f49b45524e/A7401918.jpg",
+      "title": "A74123123",
+      "width": 3,
+      "height": 2
+    },
+    {
+      "src": "/static/9045a1aeec593062e27307f49b45524e/A7401918.jpg",
+      "title": "A74123123",
+      "width": 3,
+      "height": 2
+    },
+    {
+      "src": "/static/9045a1aeec593062e27307f49b45524e/A7401918.jpg",
+      "title": "A74123123",
+      "width": 3,
+      "height": 2
+    }
+  ]
+}
