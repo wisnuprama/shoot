@@ -26,6 +26,7 @@
     "gatsby-plugin-sitemap": "^6.5.0",
     "gatsby-source-filesystem": "^5.5.0",
     "gatsby-transformer-json": "^5.5.0",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.0.0",

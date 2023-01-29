@@ -1,6 +1,6 @@
 import type { Gallery } from "@typing/models";
 
-import { css } from "@emotion/react";
+import type { css } from "@emotion/react";
 import { PhotoAlbum } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -12,6 +12,7 @@ type GalleryViewProps = {
   onCloseLightBox: () => void;
   selectedPhotoIndex: number;
   data: Gallery["photos"];
+  sectionCSS: ReturnType<typeof css>;
 };
 
 export function GalleryView({
@@ -19,13 +20,10 @@ export function GalleryView({
   selectedPhotoIndex,
   data,
   onCloseLightBox,
+  sectionCSS,
 }: GalleryViewProps) {
   return (
-    <section
-      css={css`
-        padding: 24;
-      `}
-    >
+    <section css={sectionCSS}>
       <PhotoAlbum
         layout="rows"
         photos={data}

@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import { useGalleryViewModel } from "@viewmodels/GalleryViewModel";
 import { GalleryView } from "@components/GalleryView";
 import { Footer } from "@components/Footer";
+import { css } from "@emotion/react";
 
 type DataProps = {
   allGalleryJson: Pick<Gallery, "albumName" | "albumSlug" | "ctime">;
@@ -12,21 +13,42 @@ type DataProps = {
   site: Site;
 };
 
+// rgb(55, 64, 69)
+// rgb(216, 146, 22)
+// rgb(225, 216, 159);
+
 function IndexPage({ data }: PageProps<DataProps>) {
   const glViewModel = useGalleryViewModel(data);
 
   return (
-    <main>
+    <main
+      css={css`
+        height: 100vh;
+        background: #F5F5F5;
+      `}
+    >
       <GalleryView
+        sectionCSS={css`
+          padding: 12px;
+        `}
         data={glViewModel.data}
         selectedPhotoIndex={glViewModel.selectedPhotoIndex}
         onClickPhoto={glViewModel.clickPhoto}
         onCloseLightBox={glViewModel.closeLightBox}
       />
-      <Footer
-        siteTitle={data.site.siteMetadata.title}
-        authorName={data.site.siteMetadata.author}
-      />
+      <div
+        css={css`
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        `}
+      >
+        <Footer
+          siteTitle={data.site.siteMetadata.title}
+          authorName={data.site.siteMetadata.author}
+        />
+      </div>
     </main>
   );
 }
@@ -42,8 +64,8 @@ export const query = graphql`
         albumName
         albumSlug
       }
-    },
-    galleryJson(albumSlug: {eq: "..."}) {
+    }
+    galleryJson(albumSlug: { eq: "..." }) {
       albumName
       albumSlug
       photos {
@@ -52,7 +74,7 @@ export const query = graphql`
         title
         src
       }
-    },
+    }
     site {
       siteMetadata {
         title
