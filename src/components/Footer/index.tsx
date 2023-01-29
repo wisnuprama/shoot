@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { useState } from "react";
 
 type SocialLink = {
@@ -46,11 +47,34 @@ export function HiddenSection() {
 export function Footer({ siteTitle, authorName, socialLinks }: FooterProps) {
   const [showHiddenSection, _] = useState(false);
   return (
-    <footer className="footer">
+    <footer css={css`
+      padding-top: 24px;
+      padding-left: 12px;
+      padding-right: 12px;
+      background: #1A1C20;
+      color: #F7F7F7;
+    `}>
       <div>
         <div>
           <div>
-            <h5>{siteTitle} • © Copyright 2023 {authorName}. All rights reserved.</h5>
+            <div>
+              <div>
+                {siteTitle} • {authorName}.
+              </div>
+              <div>
+                Except where otherwise stated, the content on this site is
+                licensed under a{" "}
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+                >
+                  Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+                  International License
+                </a>
+                .
+              </div>
+            </div>
+
             {Array.isArray(socialLinks) && (
               <span className="nav">
                 {socialLinks.map((s) => (
